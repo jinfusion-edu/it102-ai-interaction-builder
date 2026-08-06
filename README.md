@@ -48,7 +48,7 @@ A white card headed **Interactive Greeter** with two labelled fields and a blue
 
 ## Live URL
 
-https://jinfusion-edu.github.io/it102-ai-interaction-builder/
+https://edu.jinfusion.dev/it102-ai-interaction-builder/
 
 ## AI collaboration — tool and prompt
 
