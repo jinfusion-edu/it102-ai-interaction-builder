@@ -27,7 +27,49 @@
     </div>
 
     <script>
-        / YOUR JS CODE WILL GO HERE
+        /* ================================================================
+           PART 1 — the AI-generated function.
+           Requested via the prompt recorded in README.md. It returns a
+           string and touches no DOM, exactly as the prompt demanded.
+           ================================================================ */
+        function generateCustomGreeting(name, time) {
+            // The assignment requires "day" when no time is provided.
+            //
+            // A default parameter (time = "day") is NOT enough here: an empty
+            // text input hands us the empty string "", and a default only
+            // fires for `undefined`. So we test the value itself.
+            var timeOfDay = time;
+
+            if (timeOfDay === undefined || timeOfDay === null || String(timeOfDay).trim() === "") {
+                timeOfDay = "day";
+            }
+
+            return "Good " + timeOfDay + ", " + name + "! Welcome back to JavaScript class.";
+        }
+
+        /* ================================================================
+           PART 2 — the event listener. Written by hand, not by the AI,
+           because wiring the DOM is the skill this assignment is testing.
+           ================================================================ */
+
+        // Step 1: select the elements.
+        var nameInput = document.getElementById("userName");
+        var timeInput = document.getElementById("timeOfDay");
+        var greetButton = document.getElementById("greetBtn");
+        var outputParagraph = document.getElementById("output");
+
+        // Step 2: listen for the click.
+        greetButton.addEventListener("click", function () {
+            // Step 3: capture the current text of both inputs.
+            var enteredName = nameInput.value;
+            var enteredTime = timeInput.value;
+
+            // Call the AI function, passing the captured values as arguments.
+            var greeting = generateCustomGreeting(enteredName, enteredTime);
+
+            // Write the returned string into the paragraph.
+            outputParagraph.textContent = greeting;
+        });
     </script>
 </body>
 </html>
